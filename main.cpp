@@ -1,8 +1,8 @@
 /*************************************************************************************
 Program............:MathTutorV1
-Programmer........ : Md Mahbubur Rahman Siam, Saw Barnabas Thadoe Htoo
+Programmer........ : Joeseph Bracht, Saw Barnabas Thadoe Htoo
 Date................: 2026.09.09
-GitHub Repo.............: https://github.com/NETtlSimrox/MathTutorV1.git
+GitHub Repo.............: https://github.com/BarnabasHtoo/MathTutorV2.git
 Description.............. A math game designed for children to learn basic addition.
                           The program will ask the user to input their name and then
                           present them with a simple addition problem, accepts an answer,
@@ -16,7 +16,6 @@ int main() {
     string statement_i;
     int firstNum = 2;
     int secondNum = 3;
-    int userAns;
     int answer = 5;
 
 
