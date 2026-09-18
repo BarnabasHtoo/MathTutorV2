@@ -9,15 +9,20 @@ Description.............. A math game designed for children to learn basic addit
                           and displays a program ending message.
 *****************************************************************************************/
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 int main() {
     string userName = "unknown";
     string statement_i;
-    int firstNum = 2;
-    int secondNum = 3;
-    int answer = 5;
+    string answer = "";
+    int x = 0;
+    int y = 0;
 
+    srand(time(NULL));
+
+    x = rand() % 10 + 1;
+    y = rand() % 10 + 1;
 
     cout << " __  __       _   _       _____      _ " << endl;
     cout << "|  \\/  | __ _| |_| |__   |_   _|   _| |_ ___  _ __ " << endl;
@@ -30,14 +35,14 @@ int main() {
     cout << "_________________________________________________" << endl;
 
     cout << "Identify yourself ,Sir: ";
-    cin >> userName;
+    getline (cin,userName);
     cout << "Welcome " << userName << "!" << endl;
 
     cout << "Are you ready to guess the answer?" << endl;
     cin >> statement_i;
 
     cout << "Here we go!" << endl;
-    cout << firstNum << " + " << secondNum << " = " << "?" << endl;
+    cout << x << " + " << y << " = " << "?" << endl;
     cout << "Please type the answer below!" << endl;
     cin >> answer;
 
