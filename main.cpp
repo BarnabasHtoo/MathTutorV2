@@ -18,6 +18,7 @@ int main() {
     string answer = "";
     int x = 0;
     int y = 0;
+    int answerI = 0;
 
     srand(time(NULL));
 
@@ -44,10 +45,15 @@ int main() {
     cout << "Here we go!" << endl;
     cout << x << " + " << y << " = " << "?" << endl;
     cout << "Please type the answer below!" << endl;
-    cin >> answer;
+    cin >> answerI;
 
-    cout << "We will tell you the correct answer on our MathTutor Vers. II" << endl;
-    cout << "Stay Tuned!" << endl;
+    if (answerI == x+y) {
+        cout << "You are genius!" << endl;
+
+    }
+    else {
+        cout << "You can try again. Don't give up" << endl;
+    }
     cout << R"(
  ____ _                 _
 |_  _| |__   __ _ _ __ | | __  _   _  ___  _   _
