@@ -15,7 +15,8 @@ using namespace std;
 int main() {
     string userName = "unknown";
     string statement_i;
-    string answer = "";
+    string answer = "?";
+    char userSex = '?';
     int x = 0;
     int y = 0;
     int answerI = 0;
@@ -28,36 +29,47 @@ int main() {
 
     cout << " __  __       _   _       _____      _ " << endl;
     cout << "|  \\/  | __ _| |_| |__   |_   _|   _| |_ ___  _ __ " << endl;
-    cout << "| |\\/| |/ _` | __| '_ \\    | || | | | __/ _ \\| '__|"<< endl;
+    cout << "| |\\/| |/ _` | __| '_ \\    | || | | | __/ _ \\| '__|" << endl;
     cout << "| |  | | (_| | |_| | | |   | || |_| | || (_) | |   " << endl;
     cout << "|_|  |_|\\__,_|\\__|_| |_|   |_| \\__,_|\\__\\___/|_|   " << endl;
 
     cout << "_________________________________________________" << endl;
-    cout << "Welcome to the Silly Simply Math Tutor V2!" << endl ;
+    cout << "Welcome to the Silly Simply Math Tutor V2!" << endl;
     cout << "_________________________________________________" << endl;
 
-    cout << "Identify yourself ,Sir: ";
-    getline (cin,userName);
-    cout << "Welcome " << userName << "!" << endl;
+    cout << "Please enter your sex! Type M or F: ";
+    cin >> userSex;
 
+    if (userSex == 'M') {
+        cout << "Identify yourself, Mister: ";
+        getline(cin, userName); //only to clear the input buffer
+        getline(cin, userName);
+
+        cout << "Welcome Mister " << userName << "!" << endl;
+    } else {
+        cout << "Identify yourself, Miss: ";
+        getline(cin, userName); //only to clear the input buffer
+        getline(cin, userName);
+
+        cout << "Welcome Miss " << userName << "!" << endl;
+    }
     cout << R"(
 Here is the fun facts before we continue!!
 - Numbers can be Funny
 - Did you know Math is everywhere around you, even in jokes and games
 - Spending just 10 minutes a day solving Math problems )" << endl;
     cout << "________________________________________________________________" << endl;
-    cout << "Before we go on, can you please enter your age?" << endl;
+    cout << "Before we go on, can you please enter your age: ";
     cin >> userAge;
 
     if (userAge >= 21) {
         cout << "You are an adult now. Please be responsible of yourself." << endl;
-    }
-    else if (userAge < 18) {
+    } else if (userAge < 18) {
         cout << "You can enjoy your early years." << endl;
-    }
-    else {
+    } else {
         cout << "You are living in the best part of your life. Make good choice!" << endl;
     }
+
     cout << "Now, are you ready to guess the answer?" << endl;
     cin >> statement_i;
     cout << "Here we go!" << endl;
@@ -65,13 +77,9 @@ Here is the fun facts before we continue!!
     cout << "Please type the answer below!" << endl;
     cin >> answerI;
 
-
-
-    if (answerI == x+y) {
+    if (answerI == x + y) {
         cout << "You are genius!" << endl;
-
-    }
-    else {
+    } else {
         cout << "You can try again. Don't give up" << endl;
     }
     cout << R"(
@@ -81,5 +89,5 @@ Here is the fun facts before we continue!!
  | | | | | | (_| | | | |   <  | |_| | (_) | |_| |
  |_| |_| |_|\__,_|_| |_|_|\_\  \__, |\___/ \__,_|
                                |___/             )" << endl;
-    return 0;
-}
+        return 0;
+    }
