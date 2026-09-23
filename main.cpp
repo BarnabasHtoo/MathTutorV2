@@ -19,6 +19,7 @@ int main() {
     int x = 0;
     int y = 0;
     int answerI = 0;
+    int userAge = 0;
 
     srand(time(NULL));
 
@@ -32,7 +33,7 @@ int main() {
     cout << "|_|  |_|\\__,_|\\__|_| |_|   |_| \\__,_|\\__\\___/|_|   " << endl;
 
     cout << "_________________________________________________" << endl;
-    cout << "Welcome to the Silly Simply Math Tutor V1!" << endl ;
+    cout << "Welcome to the Silly Simply Math Tutor V2!" << endl ;
     cout << "_________________________________________________" << endl;
 
     cout << "Identify yourself ,Sir: ";
@@ -45,13 +46,26 @@ Here is the fun facts before we continue!!
 - Did you know Math is everywhere around you, even in jokes and games
 - Spending just 10 minutes a day solving Math problems )" << endl;
     cout << "________________________________________________________________" << endl;
+    cout << "Before we go on, can you please enter your age?" << endl;
+    cin >> userAge;
+
+    if (userAge >= 21) {
+        cout << "You are an adult now. Please be responsible of yourself." << endl;
+    }
+    else if (userAge < 18) {
+        cout << "You can enjoy your early years." << endl;
+    }
+    else {
+        cout << "You are living in the best part of your life. Make good choice!" << endl;
+    }
     cout << "Now, are you ready to guess the answer?" << endl;
     cin >> statement_i;
-
     cout << "Here we go!" << endl;
     cout << x << " + " << y << " = " << "?" << endl;
     cout << "Please type the answer below!" << endl;
     cin >> answerI;
+
+
 
     if (answerI == x+y) {
         cout << "You are genius!" << endl;
