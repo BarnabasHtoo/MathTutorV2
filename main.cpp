@@ -39,7 +39,13 @@ int main() {
     getline (cin,userName);
     cout << "Welcome " << userName << "!" << endl;
 
-    cout << "Are you ready to guess the answer?" << endl;
+    cout << R"(
+Here is the fun facts before we continue!!
+- Numbers can be Funny
+- Did you know Math is everywhere around you, even in jokes and games
+- Spending just 10 minutes a day solving Math problems )" << endl;
+    cout << "________________________________________________________________" << endl;
+    cout << "Now, are you ready to guess the answer?" << endl;
     cin >> statement_i;
 
     cout << "Here we go!" << endl;
