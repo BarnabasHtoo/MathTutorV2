@@ -70,18 +70,14 @@ Here is the fun facts before we continue!!
         cout << "You are living in the best part of your life. Make good choice!" << endl;
     }
 
-    cout << "Now, are you ready to guess the answer?" << endl;
-    cin >> statement_i;
-    cout << "Here we go!" << endl;
-    cout << x << " + " << y << " = " << "?" << endl;
-    cout << "Please type the answer below!" << endl;
-    cin >> answerI;
 
-    if (answerI == x + y) {
-        cout << "You are genius!" << endl;
-    } else {
-        cout << "You can try again. Don't give up" << endl;
-    }
+
+
+
+
+
+
+
     cout << R"(
  ____ _                 _
 |_  _| |__   __ _ _ __ | | __  _   _  ___  _   _
