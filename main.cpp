@@ -1,7 +1,7 @@
 /*************************************************************************************
-Program............:MathTutorV1
+Program............:MathTutorV2
 Programmer........ : Joeseph Bracht, Saw Barnabas Thadoe Htoo
-Date................: 2026.09.09
+Date................: 9/28/2026
 GitHub Repo.............: https://github.com/BarnabasHtoo/MathTutorV2.git
 Description.............. A math game designed for children to learn basic addition.
                           The program will ask the user to input their name and then
