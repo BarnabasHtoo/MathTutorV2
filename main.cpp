@@ -1,7 +1,8 @@
 /*************************************************************************************
 Program............:MathTutorV2
-Programmer........ : Joeseph Bracht, Saw Barnabas Thadoe Htoo
+Programmer........ : Joeseph Paul Bracht, Saw Barnabas Thadoe Htoo
 Date................: 9/28/2026
+Course Section......:12:00 pm
 GitHub Repo.............: https://github.com/BarnabasHtoo/MathTutorV2.git
 Description.............. A math game designed for children to learn basic addition.
                           The program will ask the user to input their name and then
@@ -9,7 +10,9 @@ Description.............. A math game designed for children to learn basic addit
                           and displays a program ending message.
 *****************************************************************************************/
 #include <iostream>
-#include <cstdlib>
+#include <cstdlib> // C Standard Library; handles random functions
+#include <ctime> // C time; handles time related functions\
+
 using namespace std;
 
 int main() {
@@ -17,15 +20,17 @@ int main() {
     string statement_i;
     string answer = "?";
     char userSex = '?';
-    int x = 0;
-    int y = 0;
+    int leftNum = 0;
+    int rightNum = 0;
     int answerI = 0;
     int userAge = 0;
+    char mathSymbol = '?';
 
     srand(time(NULL));
 
-    x = rand() % 10 + 1;
-    y = rand() % 10 + 1;
+    leftNum = rand() % 10 + 1; // randomly generated number on the left of operator from 1-10
+    rightNum = rand() % 10 + 1; // randomly generated number on the right of operator from 1-10
+    mathSymbol = rand() % 4 + 1; // used to randomly generate the number for the operators later; goes from 1-4
 
     cout << " __  __       _   _       _____      _ " << endl;
     cout << "|  \\/  | __ _| |_| |__   |_   _|   _| |_ ___  _ __ " << endl;
@@ -41,7 +46,7 @@ int main() {
     cin >> userSex;
 
     if (userSex == 'M') {
-        cout << "Identify yourself, Mister: ";
+        cout << "Identify yourself, Mister: "; //input of "m" is invalid, it switches to the else; don't worry for now
         getline(cin, userName); //only to clear the input buffer
         getline(cin, userName);
 
