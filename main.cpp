@@ -10,27 +10,29 @@ Description.............. A math game designed for children to learn basic addit
                           and displays a program ending message.
 *****************************************************************************************/
 #include <iostream>
-#include <cstdlib> // C Standard Library; handles random functions
-#include <ctime> // C time; handles time related functions\
-
+#include <string>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 int main() {
     string userName = "unknown";
     string statement_i;
-    string answer = "?";
+    int answer = 0;
     char userSex = '?';
-    int leftNum = 0;
-    int rightNum = 0;
+    int leftNumb = 0;
+    int rightNumb = 0;
     int answerI = 0;
     int userAge = 0;
+    int mathType = 0;
     char mathSymbol = '?';
+    int temp = 0;
 
     srand(time(NULL));
 
-    leftNum = rand() % 10 + 1; // randomly generated number on the left of operator from 1-10
-    rightNum = rand() % 10 + 1; // randomly generated number on the right of operator from 1-10
-    mathSymbol = rand() % 4 + 1; // used to randomly generate the number for the operators later; goes from 1-4
+    leftNumb = rand() % 10 + 1;
+    rightNumb = rand() % 10 + 1;
+    mathType = rand() % 4 + 1;
 
     cout << " __  __       _   _       _____      _ " << endl;
     cout << "|  \\/  | __ _| |_| |__   |_   _|   _| |_ ___  _ __ " << endl;
@@ -46,7 +48,7 @@ int main() {
     cin >> userSex;
 
     if (userSex == 'M') {
-        cout << "Identify yourself, Mister: "; //input of "m" is invalid, it switches to the else; don't worry for now
+        cout << "Identify yourself, Mister: ";
         getline(cin, userName); //only to clear the input buffer
         getline(cin, userName);
 
@@ -62,7 +64,7 @@ int main() {
 Here is the fun facts before we continue!!
 - Numbers can be Funny
 - Did you know Math is everywhere around you, even in jokes and games
-- Spending just 10 minutes a day solving Math problems )" << endl;
+- An equation a day keeps the brain fog away! )" << endl;
     cout << "________________________________________________________________" << endl;
     cout << "Before we go on, can you please enter your age: ";
     cin >> userAge;
@@ -75,13 +77,74 @@ Here is the fun facts before we continue!!
         cout << "You are living in the best part of your life. Make good choice!" << endl;
     }
 
+    switch (mathType)
+    {
+        case 1:
+            mathSymbol = '+';
+            answerI = leftNumb + rightNumb;
+            break;
 
+        case 2:
+            if (leftNumb < rightNumb)
+            {
+                temp = leftNumb;
+                leftNumb = rightNumb;
+                rightNumb = temp;
+            }
 
+            mathSymbol = '-';
+            answerI = leftNumb - rightNumb;
+            break;
 
+        case 3:
+            // Multiplication
+            mathSymbol = '*';
+            answerI = leftNumb * rightNumb;
+            break;
 
+        case 4:
+            answerI = leftNumb;
+            leftNumb *= rightNumb;
+            mathSymbol = '/';
+            break;
 
+        default:
+            cout << "Error: Invalid math type generated!" << endl;
+            cout << "Math type must be between 1 and 4." << endl;
 
+            return 0;
+    }
 
+    cout << leftNumb << " " << mathSymbol << " "
+    << rightNumb << " = ?" << endl;
+
+    cout << "Your answer: ";
+    cin >> answer;
+
+    cout << endl;
+
+    if (answer == answerI)
+    {
+        cout << "========================================" << endl;
+        cout << "Congratulations, " << userName << "!" << endl;
+        cout << "Your answer is CORRECT!" << endl;
+        cout << "Great job on your math skills!" << endl;
+        cout << "========================================" << endl;
+    }
+    else
+    {
+        cout << "========================================" << endl;
+        cout << "Good try, " << userName << "!" << endl;
+        cout << "Your answer is incorrect." << endl;
+        cout << "The correct answer is: "
+        << answerI << endl;
+        cout << "Keep practicing. You can do it!" << endl;
+        cout << "========================================" << endl;
+    }
+
+    cout << endl;
+    cout << "Thank you for using Math Tutor V2!" << endl;
+    cout << "Have a wonderful day, " << userName << "!" << endl;
 
     cout << R"(
  ____ _                 _
@@ -90,5 +153,5 @@ Here is the fun facts before we continue!!
  | | | | | | (_| | | | |   <  | |_| | (_) | |_| |
  |_| |_| |_|\__,_|_| |_|_|\_\  \__, |\___/ \__,_|
                                |___/             )" << endl;
-        return 0;
-    }
+    return 0;
+}
