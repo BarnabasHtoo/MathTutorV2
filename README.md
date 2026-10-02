@@ -6,7 +6,7 @@ develop basic arithmetic skills through randomly generated math problems.
 <b>Table of Content</b>
 - [Summary](#summary)
 - [Fun Math Facts](#Fun-Math-Facts)
-- [Features](Features)
+- [Features](#Features)
 - [Maintainers](#maintainers)
 - [New Concepts Used](#new-concepts-used)
 - [Console Output Example](#console-output-example)
@@ -57,7 +57,7 @@ sharing fun math facts, and providing encouraging feedback based on performance.
 - Arithmetic operators
 - Conditional statements (if, else if, else)
 
-## Console Output Testing Example
+## Console Output Example
 
 ### 1. Correct Answer
 ````
