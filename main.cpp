@@ -9,30 +9,29 @@ Description.............. A math game designed for children to learn basic addit
                           present them with a simple addition problem, accepts an answer,
                           and displays a program ending message.
 *****************************************************************************************/
-#include <iostream>
-#include <string>
-#include <ctime>
-#include <cstdlib>
+#include <iostream> // Where the cout's and cin's come from
+#include <string> // Where the string functions come from
+#include <ctime> // Where the time functions come from
+#include <cstdlib> // Where the random number functions come from
 using namespace std;
 
 int main() {
     string userName = "unknown";
-    string statement_i;
-    int answer = 0;
-    char userSex = '?';
-    int leftNumb = 0;
-    int rightNumb = 0;
-    int answerI = 0;
-    int userAge = 0;
-    int mathType = 0;
-    char mathSymbol = '?';
-    int temp = 0;
+    int answer = 0; // user answer; stores their input
+    char userSex = '?'; // user sex, M or F
+    int leftNumb = 0; // random number from 1-10 on the left side of equation
+    int rightNumb = 0; // random number from 1-10 on the right side of equation
+    int answerI = 0; // where the correct answer for the later equation is stored
+    int userAge = 0; // user age; has various different phrases later depending on the age range the user inputs
+    int mathType = 0; // stores the number that chooses between addition, subtraction, multiplication, and division
+    char mathSymbol = '?'; // +, -, *, and / are the characters that could be randomly selected
+    int temp = 0; // Temporary Variable, used to ensure the left number is greater than the right number
 
-    srand(time(0));
+    srand(time(0)); // Sets the random number below
 
-    leftNumb = rand() % 10 + 1;
-    rightNumb = rand() % 10 + 1;
-    mathType = rand() % 4 + 1;
+    leftNumb = rand() % 10 + 1; // random number from 1-10 on the left side of equation
+    rightNumb = rand() % 10 + 1; // random number from 1-10 on the right side of equation
+    mathType = rand() % 4 + 1; // handles the numbers that choose the kind of operation like addition
 
     cout << " __  __       _   _       _____      _ " << endl;
     cout << "|  \\/  | __ _| |_| |__   |_   _|   _| |_ ___  _ __ " << endl;
@@ -72,7 +71,7 @@ Here is the fun facts before we continue!!
     cout << "Before we go on, can you please enter your age: ";
     cin >> userAge;
 
-    if (userAge >= 21) {
+    if (userAge >= 21) { // varying responses mentioned above for userAge variable
         cout << "You are an adult now. Please be responsible of yourself." << endl;
     } else if (userAge < 18) {
         cout << "You can enjoy your early years." << endl;
@@ -82,12 +81,12 @@ Here is the fun facts before we continue!!
 
     switch (mathType)
     {
-        case 1:
+        case 1: // A 1 in the random number generator means the equation is an addition equation
             mathSymbol = '+';
             answerI = leftNumb + rightNumb;
             break;
 
-        case 2:
+        case 2: // A 2 in the random number generator means the equation is a subtraction equation
             if (leftNumb < rightNumb)
             {
                 temp = leftNumb;
@@ -99,19 +98,18 @@ Here is the fun facts before we continue!!
             answerI = leftNumb - rightNumb;
             break;
 
-        case 3:
-            // Multiplication
+        case 3: // A 3 in the random number generator will make the equation a multiplication equation
             mathSymbol = '*';
             answerI = leftNumb * rightNumb;
             break;
 
-        case 4:
+        case 4: // A 4 in the random number generator will make equation a division equation.
             answerI = leftNumb;
-            leftNumb *= rightNumb;
+            leftNumb *= rightNumb; // *= is a compounded operator; Note 4 Joe
             mathSymbol = '/';
             break;
 
-        default:
+        default: // Default program, shouldn't run unless major mess up occurs in the number generation
             cout << "Error: Invalid math type generated!" << endl;
             cout << "Program ended with an error -1" << endl;
             cout << "Please report this error to Barnabas or Joe!" << endl;
@@ -119,15 +117,15 @@ Here is the fun facts before we continue!!
             return -1;
     }
 
-    cout << leftNumb << " " << mathSymbol << " "
+    cout << leftNumb << " " << mathSymbol << " " // This displays the equation once all the numbers have been generated
     << rightNumb << " = ?" << endl;
 
-    cout << "Your answer: ";
+    cout << "Your answer: "; // User's answer goes here
     cin >> answer;
 
     cout << endl;
 
-    if (answer == answerI)
+    if (answer == answerI) // The if outputs different phrases depending on if the user got it right
     {
         cout << "========================================" << endl;
         cout << "Congratulations, " << userName << "!" << endl;
@@ -135,7 +133,7 @@ Here is the fun facts before we continue!!
         cout << "Great job on your math skills!" << endl;
         cout << "========================================" << endl;
     }
-    else
+    else // This outputs if the user gets the answer wrong
     {
         cout << "========================================" << endl;
         cout << "Good try, " << userName << "!" << endl;
