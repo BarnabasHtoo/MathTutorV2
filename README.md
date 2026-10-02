@@ -7,6 +7,7 @@ develop basic arithmetic skills through randomly generated math problems.
 - [Summary](#summary)
 - [Fun Math Facts](#Fun-Math-Facts)
 - [Features](#Features)
+- [Special Features](#Special-Features)
 - [Maintainers](#maintainers)
 - [New Concepts Used](#new-concepts-used)
 - [Console Output Example](#console-output-example)
@@ -27,8 +28,6 @@ sharing fun math facts, and providing encouraging feedback based on performance.
 ## Features
 
 - Displays a custom ASCII art program title
-- Asks the user for their sex and name
-- Displays personalized greetings
 - Shares fun math facts
 - Requests the user's age and provides specific messages
 - Generates random numbers
@@ -39,6 +38,13 @@ sharing fun math facts, and providing encouraging feedback based on performance.
 - Displays encouraging feedback
 - Shows the correct answer when needed
 - Includes an error handling case for invalid math types
+- Ends with a personalized goodbye message
+
+## Special Features
+
+- Asks the user for their sex and name
+- Displays personalized greetings
+- Requests the user's age and provides specific messages
 - Ends with a personalized goodbye message
 
 ## Maintainers
@@ -60,7 +66,7 @@ sharing fun math facts, and providing encouraging feedback based on performance.
 ## Console Output Example
 
 ### 1. Correct Answer
-````
+```
  __  __       _   _       _____      _ 
 |  \/  | __ _| |_| |__   |_   _|   _| |_ ___  _ __ 
 | |\/| |/ _` | __| '_ \    | || | | | __/ _ \| '__|
@@ -101,9 +107,9 @@ Have a wonderful day, Diana Hope!
  |_| |_| |_|\__,_|_| |_|_|\_\  \__, |\___/ \__,_|
                                |___/             
 
-````
+```
 ### 2. Incorrect Answer
-````
+```
  __  __       _   _       _____      _ 
 |  \/  | __ _| |_| |__   |_   _|   _| |_ ___  _ __ 
 | |\/| |/ _` | __| '_ \    | || | | | __/ _ \| '__|
@@ -145,10 +151,9 @@ Have a wonderful day, Joseph Klein!
  |_| |_| |_|\__,_|_| |_|_|\_\  \__, |\___/ \__,_|
                                |___/             
 
-````
+```
 
 ### 3. Invalid Math Type
-
 
 ```
  __  __       _   _       _____      _ 
