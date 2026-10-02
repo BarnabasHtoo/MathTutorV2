@@ -28,11 +28,11 @@ int main() {
     char mathSymbol = '?';
     int temp = 0;
 
-    srand(time(NULL));
+    srand(time(0));
 
     leftNumb = rand() % 10 + 1;
     rightNumb = rand() % 10 + 1;
-    mathType = rand() % 4 + 1;
+    mathType = 5;
 
     cout << " __  __       _   _       _____      _ " << endl;
     cout << "|  \\/  | __ _| |_| |__   |_   _|   _| |_ ___  _ __ " << endl;
@@ -64,7 +64,10 @@ int main() {
 Here is the fun facts before we continue!!
 - Numbers can be Funny
 - Did you know Math is everywhere around you, even in jokes and games
-- An equation a day keeps the brain fog away! )" << endl;
+- An equation a day keeps the brain fog away!
+- The number zero was one of the most important inventions in mathematics.
+- A multiplication table can reveal many interesting number patterns. )" << endl;
+
     cout << "________________________________________________________________" << endl;
     cout << "Before we go on, can you please enter your age: ";
     cin >> userAge;
@@ -110,9 +113,10 @@ Here is the fun facts before we continue!!
 
         default:
             cout << "Error: Invalid math type generated!" << endl;
-            cout << "Math type must be between 1 and 4." << endl;
+            cout << "Program ended with an error -1" << endl;
+            cout << "Please report this error to Barnabas or Joe!" << endl;
 
-            return 0;
+            return -1;
     }
 
     cout << leftNumb << " " << mathSymbol << " "
