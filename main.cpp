@@ -11,22 +11,21 @@ Description.............. A math game designed for children to learn basic addit
 *****************************************************************************************/
 #include <iostream>
 #include <cstdlib> // C Standard Library; handles random functions
-#include <ctime> // C time; handles time related functions\
+#include <ctime> // C time; handles time related functions
 
 using namespace std;
 
 int main() {
-    string userName = "unknown";
-    string statement_i;
-    string answer = "?";
-    char userSex = '?';
-    int leftNum = 0;
-    int rightNum = 0;
-    int answerI = 0;
-    int userAge = 0;
-    char mathSymbol = '?';
+    string userName = "unknown"; // Stores the user's name entered near the beginning of program
+    string answer = "?"; // Stores the answer to the question later on in the program
+    char userSex = '?'; // Reason it's char is because the two options are: M and F
+    int leftNum = 0; // The randomly generated number on the left side of the equation
+    int rightNum = 0; // The randomly generated number on the right side of the equation
+    int answerI = 0; // Stores the correct answer for the randomly generated equation
+    int userAge = 0; // Stores the user's age they input near the beginning of program
+    char mathSymbol = '?'; // Stores the math symbol created by the switch below
 
-    srand(time(NULL));
+    srand(time(0)); // Temporary variable that ensures the left number is larger than the right number
 
     leftNum = rand() % 10 + 1; // randomly generated number on the left of operator from 1-10
     rightNum = rand() % 10 + 1; // randomly generated number on the right of operator from 1-10
@@ -42,10 +41,10 @@ int main() {
     cout << "Welcome to the Silly Simply Math Tutor V2!" << endl;
     cout << "_________________________________________________" << endl;
 
-    cout << "Please enter your sex! Type M or F: ";
+    cout << "Please enter your sex! Type M or F: "; // userSex is gathered here
     cin >> userSex;
 
-    if (userSex == 'M') {
+    if (userSex == 'M') { // userName is gathered using these statements
         cout << "Identify yourself, Mister: "; //input of "m" is invalid, it switches to the else; don't worry for now
         getline(cin, userName); //only to clear the input buffer
         getline(cin, userName);
