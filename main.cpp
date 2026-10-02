@@ -32,7 +32,7 @@ int main() {
 
     leftNumb = rand() % 10 + 1;
     rightNumb = rand() % 10 + 1;
-    mathType = 5;
+    mathType = rand() % 4 + 1;
 
     cout << " __  __       _   _       _____      _ " << endl;
     cout << "|  \\/  | __ _| |_| |__   |_   _|   _| |_ ___  _ __ " << endl;
